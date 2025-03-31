@@ -1,0 +1,91 @@
+.first-filter-section{
+    .first-filter-section-body{
+      width: 100%;
+      background-color: #f1f1f1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: space-between;
+      border-radius: 16px;
+      .filter-cards{
+        gap: 8px;
+      }
+      .cards {
+        border-radius: 8px !important;
+        border: 1px solid #4f7edc;
+        width: 275px;
+        background-color: #fff;
+        height : 100%;
+
+        @media (max-width: 400px) {
+          .card-body {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+        .card-body {
+          padding: 8px 16px;
+          border-radius: 8px !important;
+          font-size: 20px;
+          font-weight: 600;
+          .text-red {
+            color: #cd2f31;
+          }
+          .text-blue {
+            color: #2972b0;
+          }
+        }
+
+        .card-title {
+          margin-bottom: 2px !important;
+          font-size: 14px;
+          color: #333;
+          font-weight: 600;
+        }
+
+        .availableBar {
+          position: relative;
+          width: 100%;
+          height: 10px;
+          overflow: hidden;
+        
+          .scheduledBar {
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            position: absolute;
+            border-radius: 5px;
+            border: 1px solid white;
+            transform-origin: left;
+
+            animation: growLeftToRight 2s ease-out backwards;
+          }
+          
+        
+          .openslotsBar {
+            width: 40%;
+            height: 100%;
+            border-radius: 5px;
+            background-color: #2972B0;
+            position: absolute;
+            border: 1px solid white;
+            border-right-width: 2px;
+            transform-origin: left;
+
+            animation: growRightToLeft 1.5s ease-out forwards;
+            ;
+          }
+         
+        }
+      }
+    }
+}
+@keyframes growLeftToRight {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+  
+  @keyframes growRightToLeft {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
